@@ -33,9 +33,9 @@ Project Planning
 
 Date	Goals
 
-Sun. 01/23	Create GitHub repository. Complete README.md.
-Tue. 01/25	Create my HTML/CSS/JS files. Start my basic layout.
-Thu. 01/27	Create layouts and collect images that will be used for the game.
-Sun. 01/30	Start putting the codes for each files. Complete everything.
-Tue. 02/01	Do Post-MVP Plans
-Thu. 02/03	Deploy to GitHub Pages. Submit completed project. Project presentations.
+    -Sun. 01/23: Create GitHub repository. Complete README.md.
+    -Tue. 01/25: Create my HTML/CSS/JS files. Start my basic layout.
+    -Thu. 01/27: Create layouts and collect images that will be used for the game.
+    -Sun. 01/30: Start putting the codes for each files. Complete everything.
+    -Tue. 02/01: Do Post-MVP Plans
+    -Thu. 02/03: Deploy to GitHub Pages. Submit completed project. Project presentations.
