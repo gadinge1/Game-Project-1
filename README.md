@@ -16,6 +16,7 @@ Game Logic
 Deliverables
    
 MVP Criteria
+
     -Player will choose level of difficulties (Easy, Medium and Hard).
     -Player, which is the frog will start.
     -Player will pick an answer for each questions that's on the screen.
@@ -23,6 +24,7 @@ MVP Criteria
     -Player goes back to the last question when answered wrong.
     
 Post-MVP Plans
+
     -Create more questions for each difficulties.
     -More levels.
     -Rewards when the player finishes the level.
@@ -30,6 +32,7 @@ Post-MVP Plans
 Project Planning
 
 Date	Goals
+
 Sun. 01/23	Create GitHub repository. Complete README.md.
 Tue. 01/25	Create my HTML/CSS/JS files. Start my basic layout.
 Thu. 01/27	Create layouts and collect images that will be used for the game.
