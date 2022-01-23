@@ -2,7 +2,7 @@
 
 Project Description - Save the Frog
 
-    This game is about solving math problems using a frog (the main character of the game). There would be 3 level of difficulties in this game, such as Easy, Medium and Hard. The Frog will be the one to choose the answer for each questions. The player will carefully choose the correct answer for each level, in order to move forward. Pretty simple and can be kids-friendly.
+    This game is about solving math problems using a frog (the main character of the game). There would be 3 level of difficulties in this game, such as Easy, Medium and Hard. The player will choose the answer for each questions. The player will carefully choose the correct answer for each level, in order to move forward. Pretty simple and can be kids-friendly.
 
 Game Logic
 
