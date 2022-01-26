@@ -113,9 +113,4 @@ function showAnswers(){
 }
 
 
-
-
-
-
-
-})
+})();
