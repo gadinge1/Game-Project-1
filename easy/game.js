@@ -112,5 +112,4 @@ function showAnswers(){
         answersContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}` ;
 }
 
-
 })();
