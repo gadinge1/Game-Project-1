@@ -7,14 +7,14 @@ function showAnswer(){}
 
 // Variables
 const questionContainer = document.getElementById('question');
-const answerContainer = document.getElementById('answer');
+const answerContainer = document.getElementById('answers');
 const submitButton = document.getElementById('submit');
 
 // Display question
 buildQuestion();
 
 // Event Listeners. When submit is click, show answers
-submitButton.addEventListener('click', showAnswer);
+submitButton.addEventListener('click', showAnswers);
 
 
 // Using an array will make the questions to iterate over.
@@ -43,20 +43,20 @@ myQuestion.forEach(
         // Variable to store the list of possible answers
         const answers = [];
         // For each available answer
-        for(letter in currentQuestion.answer){
+        for(letter in currentQuestion.answers){
             // add an HTML radio button
-            answer.push(
+            answers.push(
                 `<label>
                 <input type="radio" name="question${questionNumber}" value=${letter}">
                 ${letter} :
-                ${currentQuestion.answer[letter]}
+                ${currentQuestion.answers[letter]}
                 </label>` 
             );
             }
         // Question and Answer will be added to the output
         output.push(
             `<div class="question"> ${currentQuestion.question} </div>
-            <div class="answer"> ${answer.join('')} </div>`
+            <div class="answers"> ${answers.join('')} </div>`
         );
     }
 );
@@ -66,7 +66,7 @@ myQuestion.forEach(
 // Show Answers Function
 function showAnswers(){
     // Containers from our question
-    const answerContainer = questionContainer.querySelectorAll('.answer');
+    const answersContainer = questionContainer.querySelectorAll('.answers');
 
     // The list of user's answers
     let numCorrect = 0;
@@ -75,25 +75,25 @@ function showAnswers(){
     myQuestion.forEach((currentQuestion, questionNumber) => {
         
         // Selected answer
-        const answerContainer = answerContainers[questionNumber];
+        const answersContainer = answersContainers[questionNumber];
         const selector = `input[name=question${questionNumber}]:checked`
-        const userAnswer = (answerContainer.querySelector(selector) || {}).value; // ||: prevents from crashing the game. If the user leaves it blank or skips the question, it will be undefined or the player's answer.
+        const userAnswer = (answersContainer.querySelector(selector) || {}).value; // ||: prevents from crashing the game. If the user leaves it blank or skips the question, it will be undefined or the player's answer.
 
         // If answered correct
         if(userAnswer === currentQuestion.correctAnswer){
             // Add to the number of correct answers
             numCorrect++;
             // Correct answers is in green
-            answerContainers[questionNumber].style.color = 'lightgreen';
+            answersContainers[questionNumber].style.color = 'lightgreen';
         }
             // If answer is wrong or blank
             else{
                 // Color the answers red
-                answerContainers[questionNumber].style.color = 'red';
+                answersContainers[questionNumber].style.color = 'red';
             }
         });
         // Show number of correct answers 
-        answerContainer.innerHTML = `${numCorrect} out of ${myQuestion.length}` ;
+        answersContainer.innerHTML = `${numCorrect} out of ${myQuestion.length}` ;
 }
 
 })();
