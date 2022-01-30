@@ -93,4 +93,23 @@ function startGame() {
           { text: '8888 + 8', correct: false},
         ]
       },
+      {
+      question: 'Look at this series: 36, 34, 30, 28, 24, _. What number should come next ?',
+        answers: [
+          { text: '22', correct: true},
+          { text: '21', correct: false},
+          { text: '20', correct: false},
+          { text: '23', correct: false},
+        ]
+      },
+      {
+        question: 'I am an odd number. Take away one letter and I become even. What number am I ?',
+        answers: [
+          { text: 'Five', correct: false},
+          { text: 'Nine', correct: false},
+          { text: 'Seven', correct: true},
+          { text: 'Three', correct: false},
+        ]
+      },
+      
 ]
