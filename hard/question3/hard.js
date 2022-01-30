@@ -76,48 +76,48 @@ function startGame() {
   }
   const questions = [
     {
-      question: 'If 1 = 3, 2 = 3, 3 = 5, 4 = 4, 5 = 4, Then, 6 = ?',
+      question: 'How many known and named planets are there in the solar system ?',
       answers: [
-        { text: '4', correct: false },
-        { text: '3', correct: true },
-        { text: '6', correct: false},
-        { text: '12', correct: false},
-      ] // is 3, because ‘six’ has three letters
+        { text: '9', correct: false },
+        { text: '10', correct: false },
+        { text: '8', correct: true},
+        { text: '7', correct: false},
+      ] // There are eight and they are Mars, Mercury, Venus, Earth, Saturn, Uranus, Jupiter, and Neptune. Pluto, formerly the ninth planet in our solar system, has been demoted and is now now classified as a dwarf planet.
     },
     {
-        question: 'Using only an addition, how do you add eight 8s and get the number 1000 ?',
+        question: 'About how many bones are in the standard human body at birth ?',
         answers: [
-          { text: '88 + 888', correct: false},
-          { text: '88888 + 88', correct: false},
-          { text: '888 + 88 + 8 + 8 + 8', correct: true},
-          { text: '8888 + 8', correct: false},
-        ] // 888 + 88 + 8 + 8 + 8 = 1000
+          { text: '300', correct: false},
+          { text: '350', correct: false},
+          { text: '312', correct: true},
+          { text: '315', correct: false},
+        ] // An adult human typically has 206 bones due to some fusing together as we grow. At birth there are typically more than 300 bones. The human body is typically done with bone fusing by age 30.
       },
       {
-      question: 'Look at this series: 36, 34, 30, 28, 24, _. What number should come next ?',
+      question: 'How many colonies were there when the United States separated from England ?',
         answers: [
-          { text: '22', correct: true},
-          { text: '21', correct: false},
-          { text: '20', correct: false},
-          { text: '23', correct: false},
-        ]
+          { text: '13', correct: true},
+          { text: '12', correct: false},
+          { text: '15', correct: false},
+          { text: '14', correct: false},
+        ] // The original 13 colonies were Delaware, Pennsylvania, New Jersey, Georgia, Connecticut, Massachusetts Bay, Maryland, South Carolina, New Hampshire, Virginia, New York, North Carolina, and Rhode Island and Providence Plantations. They seceded from England in 1776.
       },
       {
-        question: 'I am an odd number. Take away one letter and I become even. What number am I ?',
+        question: 'In the movie "101 Dalmatians", how many of the dalmatians were not puppies ?',
         answers: [
-          { text: 'Five', correct: false},
-          { text: 'Nine', correct: false},
-          { text: 'Seven', correct: true},
           { text: 'Three', correct: false},
-        ] // Seven (take away the ‘s’ and it becomes ‘even’).
+          { text: 'Five', correct: false},
+          { text: 'Two', correct: true},
+          { text: 'One', correct: false},
+        ] // Pongo and Perdita were the only grown up Dalmatians.
       },
       {
-        question: 'At lunch Johnny counts 5 tables. If there are 10 people at each table, how many people are there total ?',
+        question: 'How many pennies are there in $2.00 ?',
         answers: [
-          { text: '80', correct: false},
-          { text: '40', correct: false},
-          { text: '50', correct: true}, // 5 tables times 10 people per table = 50 people. 5x10=50.
-          { text: '20', correct: false},
+          { text: '100 pennies', correct: false},
+          { text: '300 pennies', correct: false},
+          { text: '200 pennies', correct: true}, // 200 pennies equal $2.00.
+          { text: '400 pennies', correct: false},
         ]
       },
       
