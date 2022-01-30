@@ -82,7 +82,7 @@ function startGame() {
         { text: '3', correct: true },
         { text: '6', correct: false},
         { text: '12', correct: false},
-      ]
+      ] // is 3, because ‘six’ has three letters
     },
     {
         question: 'Using only an addition, how do you add eight 8s and get the number 1000 ?',
@@ -91,7 +91,7 @@ function startGame() {
           { text: '88888 + 88', correct: false},
           { text: '888 + 88 + 8 + 8 + 8', correct: true},
           { text: '8888 + 8', correct: false},
-        ]
+        ] // 888 + 88 + 8 + 8 + 8 = 1000
       },
       {
       question: 'Look at this series: 36, 34, 30, 28, 24, _. What number should come next ?',
@@ -109,6 +109,15 @@ function startGame() {
           { text: 'Nine', correct: false},
           { text: 'Seven', correct: true},
           { text: 'Three', correct: false},
+        ] // Seven (take away the ‘s’ and it becomes ‘even’).
+      },
+      {
+        question: 'At lunch Johnny counts 5 tables. If there are 10 people at each table, how many people are there total ?',
+        answers: [
+          { text: '80', correct: false},
+          { text: '40', correct: false},
+          { text: '50', correct: true}, // 5 tables times 10 people per table = 50 people. 5x10=50.
+          { text: '20', correct: false},
         ]
       },
       
