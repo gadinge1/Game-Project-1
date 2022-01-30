@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Level</title>
+    <title>Math Problems (Easy)</title>
     <link href="question.js" rel="stylesheet">
     <link href="main.css" rel="stylesheet">
+
+    
 </head>
     <style>
        body{
@@ -16,13 +18,27 @@
         }
     </style>
  <body>
-    <h1>Question 1</h1>
-    <div id="question"></div>
-    <button id="submit">Next</button>
-    <div id="answers"></div>
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div id="question">Question 1</div>
+            <div id="answer-buttons" class="button-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>        
+        <div class="start-control">
+            <button id="start-button" class="start-button">Start</button>
+        <div class="next-control">
+            <button id="next-button" class="next-button">Next</button>
+        </div>
+    </div>
+   
  </body>           
 
     <script src="./question.js"></script>
     <script src="./main.css"></script>
-</body>
+    <script src="./background.jpeg"></script>
+
 </html>

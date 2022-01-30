@@ -1,99 +1,96 @@
-// Helped functions run as soon as I define it. This will ensure that the game doesn't interfere with any other scripts on the page.
-(function(){
+const startButton = document.getElementById('start-button')
+const nextButton = document.getElementById('next-button')
+const questionContainerElement = document.getElementById('question-container')
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById('answer-buttons')
 
-// Functions 
-function buildQuestion(){}
-function showAnswer(){}
+let shuffledQuestions, currentQuestionIndex
 
-// Variables
-const questionContainer = document.getElementById('question');
-const answerContainer = document.getElementById('answers');
-const submitButton = document.getElementById('submit');
-
-// Display question
-buildQuestion();
-
-// Event Listeners. When submit is click, show answers
-submitButton.addEventListener('click', showAnswers);
-
-
-// Using an array will make the questions to iterate over.
-const myQuestion = [
-    {
-        question: "If 1 = 3, 2 = 3, 3 = 5, 4 = 4, 5 = 4, Then, 6 = ?" ,
-        answers: {
-            a: "4",
-            b: "3",
-            c: "6", 
-        },
-        correctAnswer: "is 3, because 'six' has three letters" 
-    },
-
-
-]; // Note: these questions will appear in the order they're listed, as this is an array.
-
-// Calling out function.
-function buildQuestion(){}
-    // Variable to store the HTML output 
-    const output = [];
-
-// For each question
-myQuestion.forEach(
-    (currentQuestion, questionNumber) => {
-        // Variable to store the list of possible answers
-        const answers = [];
-        // For each available answer
-        for(letter in currentQuestion.answers){
-            // add an HTML radio button
-            answers.push(
-                `<label>
-                <input type="radio" name="question${questionNumber}" value=${letter}">
-                ${letter} :
-                ${currentQuestion.answers[letter]}
-                </label>` 
-            );
-            }
-        // Question and Answer will be added to the output
-        output.push(
-            `<div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join('')} </div>`
-        );
+startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+  currentQuestionIndex++
+  setNextQuestion()
+})
+function startGame() {
+    startButton.classList.add('hide')
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    questionContainerElement.classList.remove('hide')
+    setNextQuestion()
+  }
+  
+  function setNextQuestion() {
+    resetState()
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+  }
+  
+  function showQuestion(question) {
+    questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+      const button = document.createElement('button')
+      button.innerText = answer.text
+      button.classList.add('btn')
+      if (answer.correct) {
+        button.dataset.correct = answer.correct
+      }
+      button.addEventListener('click', selectAnswer)
+      answerButtonsElement.appendChild(button)
+    })
+  }
+  
+  function resetState() {
+    clearStatusClass(document.body)
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+      answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
-);
-        // Combining output list into one string of HTML 
-        questionContainer.innerHTML = output.join('');
-
-// Show Answers Function
-function showAnswers(){
-    // Containers from our question
-    const answersContainer = questionContainer.querySelectorAll('.answers');
-
-    // The list of user's answers
-    let numCorrect = 0;
-
-    // For each question
-    myQuestion.forEach((currentQuestion, questionNumber) => {
-        
-        // Selected answer
-        const answersContainer = answersContainers[questionNumber];
-        const selector = `input[name=question${questionNumber}]:checked`
-        const userAnswer = (answersContainer.querySelector(selector) || {}).value; // ||: prevents from crashing the game. If the user leaves it blank or skips the question, it will be undefined or the player's answer.
-
-        // If answered correct
-        if(userAnswer === currentQuestion.correctAnswer){
-            // Add to the number of correct answers
-            numCorrect++;
-            // Correct answers is in green
-            answersContainers[questionNumber].style.color = 'lightgreen';
-        }
-            // If answer is wrong or blank
-            else{
-                // Color the answers red
-                answersContainers[questionNumber].style.color = 'red';
-            }
-        });
-        // Show number of correct answers 
-        answersContainer.innerHTML = `${numCorrect} out of ${myQuestion.length}` ;
-}
-
-})();
+  }
+  
+  function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+      setStatusClass(button, button.dataset.correct)
+    })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+      nextButton.classList.remove('hide')
+    } else {
+      startButton.innerText = 'Restart'
+      startButton.classList.remove('hide')
+    }
+  }
+  
+  function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+      element.classList.add('correct')
+    } else {
+      element.classList.add('wrong')
+    }
+  }
+  
+  function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+  }
+  const questions = [
+    {
+      question: 'If 1 = 3, 2 = 3, 3 = 5, 4 = 4, 5 = 4, Then, 6 = ?',
+      answers: [
+        { text: '4', correct: false },
+        { text: '3', correct: true },
+        { text: '6', correct: false},
+        { text: '12', correct: false},
+      ]
+    },
+    {
+        question: 'Using only an addition, how do you add eight 8s and get the number 1000 ?',
+        answers: [
+          { text: '88 + 888', correct: false},
+          { text: '88888 + 88', correct: false},
+          { text: '888 + 88 + 8 + 8 + 8', correct: true},
+          { text: '8888 + 8', correct: false},
+        ]
+      },
+]
