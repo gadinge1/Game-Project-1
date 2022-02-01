@@ -20,14 +20,16 @@ MVP Criteria
     -Player will choose level of difficulties (Easy, Medium and Hard).
     -Player will start answer the questions base on the level they picked.
     -Player will choose an answer for each questions that's on the screen.
-    -Player moves to next question after answering the question correctly.
-    -Player goes back to the last question when answered wrong.
+    -Player moves to next question after answering the question.
+    -Question shuffles every time they restart.
+    -Player can go back to the main page to choose another level.
     
 Post-MVP Plans
 
     -Create more questions for each difficulties.
     -More levels.
-    -Rewards when the player finishes the level.
+    -Add a main or home page with buttons for levels.
+    -Add an icon for the cursor whenever it hovers onto the screen.
 
 Project Planning
 
