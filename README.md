@@ -2,15 +2,15 @@
 
 Project Description - Math Hopperations
 
-    This game is about solving math problems using a frog (the main character of the game). There would be 3 level of difficulties in this game, such as Easy, Medium and Hard. The player will choose the answer for each questions. The player will carefully choose the correct answer for each level, in order to move forward. Pretty simple and can be kids-friendly.
+    This game is about solving math problems. There would be 3 level of difficulties in this game, such as Easy, Medium and Hard. The player will choose the answer for each questions. The player will carefully choose the correct answer for each level. Pretty simple and fun.
 
 Game Logic
 
     -A player will decide which level they want to play. 
     -Once the player picked the level they want the player will start answering the math problems for that level using the frog, who will be jumping on a leaf with an answer on it. 
-    -When the frog picks the correct answer it will move to the next question, which helps them complete the level.
-    -When the frog picks the wrong answer the leaf will disappear in the water, which tells the player it's wrong. 
-    -The frog will go back to the last question they left off, but cannot move forward until the answer is correct.
+    -When the player picks the correct answer it will turn green and show if they picked the answer correctly.
+    -When the player picks the wrong answer the button will turn red, which shows the correct answer.
+    -When the player finishes answering all the questions the button "restart" will show or the player can go back to the main page to choose another level.
 
 
 Deliverables
@@ -18,8 +18,8 @@ Deliverables
 MVP Criteria
 
     -Player will choose level of difficulties (Easy, Medium and Hard).
-    -Player, which is the frog will start.
-    -Player will pick an answer for each questions that's on the screen.
+    -Player will start answer the questions base on the level they picked.
+    -Player will choose an answer for each questions that's on the screen.
     -Player moves to next question after answering the question correctly.
     -Player goes back to the last question when answered wrong.
     
