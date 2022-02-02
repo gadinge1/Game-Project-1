@@ -19,7 +19,7 @@ nextButton.addEventListener('click', () => {
 // Function to go to home page
 function goHome() {
   homeButton.classList.add('hide') // this function goes back to home page.
-  window.document.location='file:///Users/ellagading/Math-Hopperations-Game/welcome/index.html'
+  window.document.location='welcome.html'
 }
 // Function for the start game.
 function startGame() {
