@@ -1,4 +1,5 @@
 // Buttons 
+const homeButton = document.getElementById('home-button')
 const startButton = document.getElementById('start-button')
 const nextButton = document.getElementById('next-button')
 const questionContainerElement = document.getElementById('question-container')
@@ -8,12 +9,18 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 // Shuffle function. Questions will shuffle every time it refreshes or restarts.
 let shuffledQuestions, currentQuestionIndex
 
-// Event listeners for Start and Next buttons 
+// Event listeners for Start, Next and Home buttons 
+homeButton.addEventListener('click', goHome)
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
 })
+// Function to go to home page
+function goHome() {
+  homeButton.classList.add('hide') // this function goes back to home page.
+  window.document.location='welcome.html'
+}
 // Function for the start game.
 function startGame() { // this function hides the start button when it's clicked.
     startButton.classList.add('hide') // shuffles random questions.
