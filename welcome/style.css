@@ -35,6 +35,8 @@ body {
 
 .btn:hover {
 	border-color: black;
+	cursor: url('frog-icon.png'),auto;
+
   }
 
   
