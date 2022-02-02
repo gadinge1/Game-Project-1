@@ -23,14 +23,7 @@ body {
 	align-items: center;
 	background-color: hsl(var(--hue), 100%, 20%);
   }
-  
-body.correct {
-	--hue: var(--hue-correct);
-  }
-  
-body.wrong {
-	--hue: var(--hue-wrong);
-  }
+
 #question {
 	text-align: center;
 	font-size: 35px;
@@ -76,7 +69,7 @@ body.wrong {
 	--hue: var(--hue-wrong);
   }
   
-.start-button, .next-button {
+.start-button, .next-button, .home-button {
 	font-size: 1.5rem;
 	font-weight: bold;
 	padding: 10px 20px;
@@ -92,6 +85,11 @@ body.wrong {
 	justify-content: center;
 	align-items: center;
   }
+.home-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
   
 .hide {
 	display: none;

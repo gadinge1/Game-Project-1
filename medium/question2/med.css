@@ -24,13 +24,6 @@ body {
 	background-color: hsl(var(--hue), 100%, 20%);
   }
   
-body.correct {
-	--hue: var(--hue-correct);
-  }
-  
-body.wrong {
-	--hue: var(--hue-wrong);
-  }
 #question {
 	text-align: center;
 	font-size: 35px;
@@ -57,8 +50,8 @@ body.wrong {
 	--hue: var(--hue-neutral);
 	border: 1px solid hsl(var(--hue), 100%, 30%);
 	background-color: hsl(var(--hue), 100%, 50%);
-	border-radius: 5px;
-	padding: 5px 10px;
+	border-radius: 10px;
+	padding: 10px 10px;
 	color: white;
 	outline: none;
   }

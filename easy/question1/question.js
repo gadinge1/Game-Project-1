@@ -1,4 +1,5 @@
 // Buttons 
+const homeButton = document.getElementById('home-button')
 const startButton = document.getElementById('start-button')
 const nextButton = document.getElementById('next-button')
 const questionContainerElement = document.getElementById('question-container')
@@ -8,12 +9,18 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 // Shuffle function. Questions will shuffle every time it refreshes or restarts.
 let shuffledQuestions, currentQuestionIndex
 
-// Event listeners for Start and Next buttons 
+// Event listeners for Start, Next and Home buttons 
+homeButton.addEventListener('click', goHome)
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
 })
+// Function to go to home page
+function goHome() {
+  homeButton.classList.add('hide') // this function goes back to home page.
+  window.document.location='file:///Users/ellagading/Math-Hopperations-Game/welcome/index.html'
+}
 // Function for the start game.
 function startGame() {
     startButton.classList.add('hide') // this function hides the start button when it's clicked.
@@ -62,7 +69,7 @@ function selectAnswer(e) {
     } else {
       startButton.innerText = 'Restart' // Allows the user to restart.
       startButton.classList.remove('hide')
-    }
+    } 
   }
 // Set status class function. Shows correct or wrong.
 function setStatusClass(element, correct) {
