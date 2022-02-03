@@ -12,6 +12,17 @@ h1 {
 	  text-align: top;
 	  position: relative;
   }
+  body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue), 100%, 20%);
+  }
 
 #question {
 	text-align: center;
@@ -19,7 +30,7 @@ h1 {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	color: darkgreen;
 }
-.container {
+.easycontainer {
 	width: 800px;
 	max-width: 80%;
 	background-color: white;
@@ -27,6 +38,19 @@ h1 {
 	padding: 10px;
 	box-shadow: 0 0 10px 2px;
   }
+#easytitle {
+	text-align: center;
+	font-size: 70px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: white;
+	font-weight: bold;
+}
+.easy-title-container {
+	width: 800px;
+	max-width: 80%;
+	position: absolute;
+	top: 50px;
+}
   
 .button-grid {
 	display: grid;
@@ -62,6 +86,7 @@ h1 {
 	font-size: 1.5rem;
 	font-weight: bold;
 	padding: 10px 20px;
+	color: darkgreen;
   }
   
 .start-control {
