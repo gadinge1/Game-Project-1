@@ -6,13 +6,13 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
-// Shuffle function. Questions will shuffle every time it refreshes or restarts.
+// Shuffle function. Questions will shuffle every time it refreshes or restarts or when Next is clicked.
 let shuffledQuestions, currentQuestionIndex
 
 // Event listeners for Start, Next and Home buttons 
-homeButton.addEventListener('click', goHome)
-startButton.addEventListener('click', startGame)
-nextButton.addEventListener('click', () => {
+homeButton.addEventListener('click', goHome) // when clicked it goes to home page.
+startButton.addEventListener('click', startGame) // when clicked it goes to the first question.
+nextButton.addEventListener('click', () => { // when clicked it goes to the next question.
   currentQuestionIndex++
   setNextQuestion()
 })
@@ -21,7 +21,7 @@ function goHome() {
   homeButton.classList.add('hide') // this function goes back to home page.
   window.document.location='welcome.html'
 }
-// Function for the start game.
+// Function for start game.
 function startGame() {
     startButton.classList.add('hide') // this function hides the start button when it's clicked.
     shuffledQuestions = questions.sort(() => Math.random() - .5) // shuffles random questions.
@@ -44,14 +44,14 @@ function showQuestion(question) {
       if (answer.correct) {
         button.dataset.correct = answer.correct // Setting dataset for only correct answer.
       }
-      button.addEventListener('click', selectAnswer)
+      button.addEventListener('click', selectAnswer) // shows answers when button answer is clicked.
       answerButtonsElement.appendChild(button)
     })
   }
-// Reset function which helps showing the answers and hiding the next answers.
+// Reset function which shows the answers and hiding the next correct and wrong answers.
 function resetState() {
     clearStatusClass(document.body)
-    nextButton.classList.add('hide') // after clicking the answer the next question will show and hide the next button.
+    nextButton.classList.add('hide') // after clicking the answer the next question will show and hide the next button until answer is clicked.
     while (answerButtonsElement.firstChild) {
       answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
@@ -60,15 +60,15 @@ function resetState() {
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
+    setStatusClass(document.body, correct) // shows if the answer is correct.
     Array.from(answerButtonsElement.children).forEach(button => { // using an array to use for forEach loop.
-      setStatusClass(button, button.dataset.correct) // this will check if the button is the correct answer.
+      setStatusClass(button, button.dataset.correct) // correct answer status.
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-      nextButton.classList.remove('hide') // this will help move to the next question whenever next button is clicked.
+      nextButton.classList.remove('hide') // helps move to the next question whenever next button is clicked.
     } else {
       startButton.innerText = 'Restart' // Allows the user to restart.
-      startButton.classList.remove('hide')
+      startButton.classList.remove('hide') // Start button disappears when the start button is clicked.
     } 
   }
 // Set status class function. Shows correct or wrong.
