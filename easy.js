@@ -1,4 +1,4 @@
-// Buttons 
+// Buttons and Elements
 const homeButton = document.getElementById('home-button')
 const startButton = document.getElementById('start-button')
 const nextButton = document.getElementById('next-button')
@@ -18,15 +18,15 @@ nextButton.addEventListener('click', () => { // when clicked it goes to the next
 })
 // Function to go to home page
 function goHome() {
-  homeButton.classList.add('hide') // this function goes back to home page.
-  window.document.location='welcome.html'
+  homeButton.classList.add('hide') // this function goes back to home page when clicked.
+  window.document.location='welcome.html' // path to the welcome page.
 }
 // Function for start game.
 function startGame() {
     startButton.classList.add('hide') // this function hides the start button when it's clicked.
     shuffledQuestions = questions.sort(() => Math.random() - .5) // shuffles random questions.
     currentQuestionIndex = 0 // setting it to 0 because it starts to the first question
-    questionContainerElement.classList.remove('hide') // the question-container shows up.
+    questionContainerElement.classList.remove('hide') // hides the question container.
     setNextQuestion() // calling the next question.
   }
 // Function for the next question.  
@@ -61,11 +61,11 @@ function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     setStatusClass(document.body, correct) // shows if the answer is correct.
-    Array.from(answerButtonsElement.children).forEach(button => { // using an array to use for forEach loop.
+    Array.from(answerButtonsElement.children).forEach(button => { // an array for forEach loop.
       setStatusClass(button, button.dataset.correct) // correct answer status.
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-      nextButton.classList.remove('hide') // helps move to the next question whenever next button is clicked.
+      nextButton.classList.remove('hide') // next button is hidden when clicked.
     } else {
       startButton.innerText = 'Restart' // Allows the user to restart.
       startButton.classList.remove('hide') // Start button disappears when the start button is clicked.
@@ -73,7 +73,7 @@ function selectAnswer(e) {
   }
 // Set status class function. Shows correct or wrong.
 function setStatusClass(element, correct) {
-    clearStatusClass(element)
+    clearStatusClass(element) // it clears the status when question restarts or refreshes. 
     if (correct) {
       element.classList.add('correct') // correct class
     } else {
@@ -82,11 +82,11 @@ function setStatusClass(element, correct) {
   }
 // Function to show the status for correct and wrong button
 function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
+    element.classList.remove('correct') // hides the correct status.
+    element.classList.remove('wrong') // hides the wrong status. 
   }
 
-// List of questions and answers. True is for correct answer and false is for wrong answers.
+// List of questions and answers. True is for correct answers and false is for wrong answers.
   const questions = [
     {
       question: 'If 1 = 3, 2 = 3, 3 = 5, 4 = 4, 5 = 4, Then, 6 = ?',

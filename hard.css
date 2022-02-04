@@ -2,12 +2,7 @@
 	box-sizing: border-box;
 	font-family: Gotham Rounded;
   }
-  
-:root {
-	--hue-neutral: 200;
-	--hue-wrong: 0;
-	--hue-correct: 145;
-  }
+
 h1 {
 	  text-align: top;
 	  position: relative;
@@ -85,6 +80,7 @@ h1 {
 	font-size: 1.5rem;
 	font-weight: bold;
 	padding: 10px 20px;
+	color: darkgreen;
   }
   
 .start-control {

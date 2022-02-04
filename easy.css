@@ -2,12 +2,7 @@
 	box-sizing: border-box;
 	font-family: Gotham Rounded;
   }
-  
-:root {
-	--hue-neutral: 200;
-	--hue-wrong: 0;
-	--hue-correct: 145;
-  }
+
 h1 {
 	  text-align: top;
 	  position: relative;
@@ -71,13 +66,11 @@ body {
   
 .btn:hover {
 	border-color: black;
-  }
-  
+} 
 .btn.correct {
 	--hue: var(--hue-correct);
 	color: black;
-  }
-  
+}
 .btn.wrong {
 	--hue: var(--hue-wrong);
   }
@@ -87,18 +80,17 @@ body {
 	font-weight: bold;
 	padding: 10px 20px;
 	color: darkgreen;
-  }
-  
+}
 .start-control {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  }
+}
 .next-control {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  }
+}
 .home-control {
 	display: flex;
 	justify-content: center;
@@ -107,4 +99,4 @@ body {
   
 .hide {
 	display: none;
-  }
+}
